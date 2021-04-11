@@ -3,14 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Zadanie 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 2 - Kółko i krzyżyk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav>
+    <div class="burger">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-angle-double-up off"></i>
+    </div>
+    <nav class="off">
         <ul class="clearfix">
             <li><a href="#aboutme">O mnie</a></li>
+            <li><a href="#favgame">Gierka</a></li>
             <li><a href="#gallery">Galeria</a></li>
             <li><a href="#events">Wydarzenia</a></li>
             <li><a href="#contact">Kontakt</a></li>
@@ -24,10 +33,47 @@
     <main>
         <section id="aboutme" class="aboutme clearfix">
             <div class="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit impedit laudantium animi? Neque placeat laudantium consequuntur quae amet et soluta doloremque iure earum. Tempora, atque dolorum repellendus qui eveniet culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, inventore maiores quia alias! Repellendus ullam vel voluptates tempora dolore quos explicabo eveniet assumenda.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit impedit laudantium animi? Neque
+                    placeat laudantium consequuntur quae amet et soluta doloremque iure earum. Tempora, atque dolorum
+                    repellendus qui eveniet culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
+                    inventore maiores quia alias! Repellendus ullam vel voluptates tempora dolore quos explicabo eveniet
+                    assumenda.</p>
                 <img src="img/podpis.png" alt="">
             </div>
             <div class="micro">
+            </div>
+        </section>
+        <section id="favgame" class="favgame clearfix">
+            <h2>Gramy?</h2>
+            <div class="game">
+                <div class="board clearfix">
+                    <div class="field" data-row="0" data-column="0"></div>
+                    <div class="field" data-row="0" data-column="1"></div>
+                    <div class="field" data-row="0" data-column="2"></div>
+                    <div class="field" data-row="1" data-column="0"></div>
+                    <div class="field" data-row="1" data-column="1"></div>
+                    <div class="field" data-row="1" data-column="2"></div>
+                    <div class="field" data-row="2" data-column="0"></div>
+                    <div class="field" data-row="2" data-column="1"></div>
+                    <div class="field" data-row="2" data-column="2"></div>
+                </div>
+            </div>
+            <div class="choice">
+                <div class="players">
+                    <button id="onePlayer">Graj z komputerem</button>
+                    <button id="twoPlayers">Graj we 2 osoby</button>
+                    <p id="playersChoice"></p>
+                </div>
+                <div class="chars">
+                    <button id="cross">Wybierz X</button>
+                    <button id="circle">Wybierz O</button>
+                    <p id="charChoice"></p>
+                </div>
+            </div>
+            <div class="result">
+                <h3>Wynik</h3>
+                <p id="winnerComm"></p>
+                <button id="again">Zagraj jeszcze raz</button>
             </div>
         </section>
         <section id="gallery" class="gallery">
@@ -59,7 +105,7 @@
                     <p class="city">Berlin</p>
                 </div>
                 <div class="event">
-                    <p class="name">Polish Hip-Hop Festiwal</p>
+                    <p class="name">Polish HH Festiwal</p>
                     <p class="date">28.06.2021</p>
                     <p class="city">Płock</p>
                 </div>
@@ -79,9 +125,10 @@
                     <button>Wyślij</button>
                 </form>
             </div>
-            <div class="socials">
+            <div class="socials clearfix">
                 <h3>Kontakt</h3>
-                <div class="social clearfix"><img src="img/contact1.png" alt="email"><span>dezzy@mcmusic.com</span></div>
+                <div class="social clearfix"><img src="img/contact1.png" alt="email"><span>dezzy@mcmusic.com</span>
+                </div>
                 <div class="social clearfix"><img src="img/contact2.png" alt="facebook"><span>dezzy</span></div>
                 <div class="social clearfix"><img src="img/contact3.png" alt="twitter"><span>@dezzy</span></div>
                 <div class="social clearfix"><img src="img/contact4.png" alt="youtube"><span>macdezzy</span></div>
@@ -89,8 +136,11 @@
         </section>
     </main>
     <footer>&copy; 2021 Olga Osial</footer>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script src="display.js"></script>
+    <script src="game.js"></script>
 </body>
 
 </html>

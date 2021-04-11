@@ -18,12 +18,25 @@ body {
     height: 200vh;
 }
 
+/*BURGER*/
+.burger {
+    display: none;
+}
+
+
+
+
 /*NAWIGACJA*/
 
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: #381F3D;
     padding: 15px 30px;
+    z-index: 1;
 }
 
 nav ul {
@@ -39,7 +52,7 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    margin: 0 12px;
+    margin: 0 5%;
     padding: 8px;
     font-size: 20px;
     color: #eee;
@@ -68,6 +81,62 @@ nav ul li:nth-last-child(1) a:hover {
     font-weight: bold;
     background-color: white;
     border-color: black;
+}
+
+@media (max-width: 1200px) {
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    nav ul li a {
+        font-size: 15px;
+        padding: 8px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .burger {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        display: block;
+        z-index: 2;
+        color: white;
+        font-size: 35px;
+    }
+
+    i.off {
+        display: none;
+    }
+
+    nav {
+        height: 250px;
+        transition: 0.2s;
+    }
+
+    nav.off {
+        top: -250px;
+    }
+
+    nav ul li {
+        float: none;
+        width: 100%;
+    }
+
+    nav ul li a {
+        margin: 2% 30px;
+    }
+
+    nav ul li a:hover {
+        border-bottom: none;
+
+    }
+
+    nav ul li:nth-last-child(1) {
+        margin-left: 0;
+    }
 }
 
 
@@ -102,6 +171,40 @@ header h1 {
     letter-spacing: 4px;
 }
 
+@media (max-width: 1200px) {
+    header h1 {
+        bottom: 6%;
+        left: 5%;
+        font-size: 90px;
+    }
+
+    header {
+        background-image: url(../img/header1280x853.jpg);
+    }
+
+}
+
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 75px;
+    }
+
+}
+
+@media (max-width: 415px) {
+    header h1 {
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 65px;
+    }
+
+    header {
+        background-image: url(../img/header_720x788.jpg);
+        background-size: auto 100%;
+    }
+}
 
 
 /*MAIN*/
@@ -122,7 +225,6 @@ main .aboutme {
 .aboutme div {
     float: left;
     width: 50%;
-    min-height: 70vh;
 }
 
 .aboutme .description {
@@ -147,6 +249,7 @@ main .aboutme {
 }
 
 .aboutme .micro {
+    height: 500px;
     padding: 0 10px;
     background-image: url(../img/microphone.jpg);
     background-size: cover;
@@ -156,6 +259,51 @@ main .aboutme {
     opacity: 60%;
     box-shadow: inset 0 0 30px black;
 }
+
+@media (max-width: 1200px) {
+    .aboutme .description p {
+        font-size: 18px;
+    }
+
+    .aboutme .micro {
+        height: 400px;
+    }
+}
+
+@media (max-width: 900px) {
+    .aboutme .description p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 720px) {
+    .aboutme .description p {
+        width: 80%;
+        margin-left: 5%;
+        margin-right: 15%;
+        font-size: 15px;
+    }
+
+    .aboutme .description img {
+        width: 40%;
+        margin-left: 35%;
+    }
+}
+
+@media (max-width: 415px) {
+    .aboutme div {
+        float: none;
+        width: 100%;
+    }
+
+
+    .aboutme .micro {
+        height: 300px;
+    }
+}
+
+
+
 
 
 
@@ -184,8 +332,8 @@ main .favgame {
     padding: 3px 6px;
     border: 2px solid white;
     margin: 30px auto 0;
-    font-size: 20px;
     color: white;
+    font-size: 20px;
     text-transform: uppercase;
     background-color: #9d1f9d;
     transition: 0.3s;
@@ -200,20 +348,18 @@ main .favgame {
     color: white;
     height: 20px;
     margin: 30px 0;
-    line-height: 20px;
     font-size: 20px;
+    line-height: 20px;
     text-align: center;
 }
+
 
 /* game */
 
 .game .board {
-    height: 20vw;
-    width: 20vw;
-    min-height: 300px;
-    min-width: 300px;
+    height: 25vw;
+    width: 25vw;
     border: 4px solid white;
-    margin-left: 10%;
     cursor: pointer;
 }
 
@@ -223,9 +369,9 @@ main .favgame {
     height: 32%;
     margin: 0.66%;
     background-color: white;
-    font-size: 70px;
+    font-size: 90px;
     text-align: center;
-    line-height: 100px;
+    line-height: 130px;
 }
 
 .board div:hover {
@@ -255,6 +401,138 @@ main .favgame {
     text-align: center;
     text-transform: uppercase;
 }
+
+@media (max-width: 1500px) {
+
+    .favgame button,
+    .favgame p {
+        font-size: 20px;
+    }
+
+    .result h3 {
+        font-size: 30px;
+    }
+
+    .game .board {
+        margin-left: 10%;
+    }
+
+    .board div {
+        font-size: 85px;
+        line-height: 105px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .favgame button,
+    .favgame p {
+        font-size: 18px;
+    }
+
+    .result h3 {
+        font-size: 20px;
+    }
+
+    .game .board {
+        margin-top: 6vh;
+    }
+
+    .board div {
+        font-size: 55px;
+        line-height: 90px;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .favgame button,
+    .favgame p {
+        font-size: 16px;
+    }
+
+    .result h3 {
+        font-size: 18px;
+    }
+
+    .game .board {
+        margin-top: 10vh;
+    }
+
+    .board div {
+        font-size: 45px;
+        line-height: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .favgame .game,
+    .favgame .choice,
+    .favgame .result {
+        width: 33.33%;
+    }
+
+    .favgame h2 {
+        font-size: 20px;
+    }
+
+    .favgame button,
+    .favgame p {
+        font-size: 14px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .result h3 {
+        font-size: 17px;
+    }
+
+    .board div {
+        font-size: 35px;
+        line-height: 70px;
+    }
+}
+
+@media (max-width: 780px) {
+
+
+    .choice .players {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .board div {
+        font-size: 30px;
+        line-height: 55px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .favgame .game,
+    .favgame .choice,
+    .favgame .result {
+        float: none;
+        width: 100%;
+    }
+
+    .game .board {
+        height: 50vw;
+        width: 50vw;
+        margin-left: 25vw;
+    }
+
+    .board div {
+        font-size: 35px;
+        line-height: 55px;
+    }
+}
+
+
+
+
 
 
 /*GALLERY*/
@@ -303,6 +581,7 @@ main .gallery {
     text-shadow: black 4px 4px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: inset 0 0 100px black;
+    overflow: hidden;
 }
 
 .photos div:hover p {
@@ -334,10 +613,59 @@ main .gallery {
     width: 35%;
 }
 
+@media (max-width: 1200px) {
+    .gallery h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery h2 {
+        font-size: 23px;
+    }
+
+    .photos div p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 720px) {
+    .tourphoto1 {
+        background-image: url(../img/tour1_800x533.jpg);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery .photos div {
+        float: none;
+        border: none;
+    }
+
+    .tourphoto1,
+    .tourphoto2,
+    .tourphoto3,
+    .tourphoto4,
+    .tourphoto5 {
+        width: 100%;
+    }
+
+    main .gallery {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .gallery h2 {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
 
 
 /*EVENTS*/
-
 
 
 main .events {
@@ -385,6 +713,69 @@ main .events {
 }
 
 
+@media (max-width: 1200px) {
+
+    .events h2,
+    .event .name {
+        font-size: 26px;
+    }
+
+    .event {
+        font-size: 23px;
+    }
+
+    .event .name:hover {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .events h2,
+    .event .name {
+        font-size: 23px;
+    }
+
+    .event {
+        font-size: 20px;
+    }
+
+    .event .name:hover {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .events h2,
+    .event .name,
+    .event .name:hover {
+        font-size: 20px;
+    }
+
+    .event {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .events h2,
+    .event .name {
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+
+    .event {
+        float: none;
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
+
+
+
 
 /*CONTACT*/
 
@@ -397,13 +788,13 @@ main .contact {
 .contact .form,
 .contact .socials {
     float: left;
-    font-size: 20px;
+    font-size: 26px;
     color: white;
 }
 
 .contact .form {
-    width: 30%;
-    margin: 0 12%;
+    width: 36%;
+    margin: 0 12% 0 6%;
 }
 
 .contact .socials {
@@ -423,7 +814,7 @@ form {
 form * {
     display: block;
     padding: 15px 10px;
-    font-size: 18px;
+    font-size: 19px;
     border: 3px solid #000;
 }
 
@@ -440,7 +831,7 @@ form textarea {
 
 form button {
     float: right;
-    width: 30%;
+    width: 35%;
     margin-top: 35px;
     border-color: white;
     background-color: #8D6A9E;
@@ -456,22 +847,85 @@ form button:hover {
     border-color: black;
 }
 
-
 .socials .social {
-    margin-top: 28px;
+    margin-top: 35px;
 }
 
 .social img {
-    width: 8%;
     float: left;
 }
 
 .social span {
     float: left;
     margin-left: 2%;
-    font-size: 22px;
-    line-height: 60px;
+    font-size: 24px;
+    line-height: 50px;
 }
+
+@media (max-width: 1200px) {
+
+    .contact .form,
+    .contact .socials {
+        font-size: 22px;
+    }
+
+    form * {
+        font-size: 17px;
+        border-width: 2px;
+    }
+
+    .social span {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .contact .form,
+    .contact .socials {
+        float: none;
+        width: 100%;
+        margin: 0;
+        padding: 5%;
+        font-size: 20px;
+    }
+
+    .form h3,
+    .socials h3 {
+        margin-top: 20px;
+    }
+
+    .socials .social {
+        float: left;
+        width: 50%;
+    }
+
+    form * {
+        font-size: 16px;
+    }
+
+    .social span {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:600px) {
+    .socials .social {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 415px) {
+
+    .form h3,
+    .socials h3 {
+        margin-top: 18px;
+    }
+}
+
+
+
 
 
 /*FOOTER*/
@@ -482,4 +936,11 @@ footer {
     font-size: 18px;
     color: white;
     text-align: center;
+}
+
+@media (max-width: 1200px) {
+
+    footer {
+        font-size: 15px;
+    }
 }
