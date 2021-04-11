@@ -146,7 +146,7 @@ nav ul li:nth-last-child(1) a:hover {
 
 header {
     height: 85vh;
-    background-image: url(../img/header1280x853.jpg);
+    background-image: url(../img/header.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -589,7 +589,7 @@ main .gallery {
 }
 
 .tourphoto1 {
-    background-image: url(../img/tour1_800x533.jpg);
+    background-image: url(../img/tour1.jpg);
     width: 60%;
 }
 
